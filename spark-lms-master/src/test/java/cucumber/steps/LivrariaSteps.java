@@ -1,15 +1,21 @@
 package cucumber.steps;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.spark.lms.repository.UserRepository;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LivrariaSteps {
 	
-
+	@Autowired
+	protected UserRepository users;
+	
 	@Given("Eu quero acessar a livraria")
 	public void eu_quero_acessar_a_livraria() {
-	    // Write code here that turns the phrase above into concrete actions
+		// Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
 	@When("Eu me cadastrar")

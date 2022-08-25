@@ -40,17 +40,11 @@ public class SeleniumTest {
 	public void logar() throws InterruptedException {
 		login = new LoginPO(driver);
 		driver.get(url);
-		//login
-		driver.findElement(By.xpath("//input[@name='username']")).click();
-		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("admin");
-		driver.findElement(By.xpath("//input[@name='password']")).click();
-		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin");
-		driver.findElement(By.cssSelector(".btn")).click();
-		
+
+		login.camposLogin();		
 		Thread.sleep(3000);
-		
-		
-		Assert.assertEquals("Spark LMS", login.paginaCarregada().getText());
+				
+		Assert.assertEquals("Kratos - Gama", login.paginaCarregada().getText());
 		
 		//cadastrar um usuário
 	/*	driver.findElement(By.xpath("//a[contains(text(),'Members')]")).click();

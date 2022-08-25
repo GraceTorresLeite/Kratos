@@ -18,6 +18,8 @@ public class SeleniumTest {
 	
 	String url;
 	WebDriver driver; 
+	LoginPO login;
+	CategoriaPO categoria;
 	
 	@Before
 	public void iniciar() {
@@ -36,6 +38,7 @@ public class SeleniumTest {
 
 	@Test
 	public void logar() throws InterruptedException {
+		login = new LoginPO(driver);
 		driver.get(url);
 		//login
 		driver.findElement(By.xpath("//input[@name='username']")).click();
@@ -46,7 +49,8 @@ public class SeleniumTest {
 		
 		Thread.sleep(3000);
 		
-		Assert.assertEquals("Spark LMS", driver.findElement(By.xpath("/html/body/div/div/div[1]/div/div[1]/a/span")).getText());
+		
+		Assert.assertEquals("Spark LMS", login.paginaCarregada().getText());
 		
 		//cadastrar um usuário
 	/*	driver.findElement(By.xpath("//a[contains(text(),'Members')]")).click();
@@ -91,6 +95,19 @@ public class SeleniumTest {
 		driver.findElement(By.id("authors")).sendKeys("Gama Academy");
 		driver.findElement(By.cssSelector(".btn-success")).click();*/
 	}
-	
-
+	@Test
+	public void cadastraCategoriaLivro() throws InterruptedException {
+		//NAO LOCALIZA BOTAO SALVAR
+		/*login = new LoginPO(driver);
+		driver.get(url);
+		login.camposLogin();
+		
+		categoria = new CategoriaPO(driver);
+		categoria.camposCategoria();
+		
+		driver.manage().timeouts().implicitlyWait(60000, TimeUnit.MILLISECONDS);
+		
+		Assert.assertEquals("automaçao' is added as a new category.", categoria.alertaCategoriaSalvo().getText());*/
+		
+	}
 }

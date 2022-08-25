@@ -15,6 +15,10 @@
 ### Interface 
 <img src="spark-lms-master/img/login.png" width="550" height="300">
 
+## ERR - Diagrama Workbench
+
+<img src="spark-lms-master/img/Diagram.png" width="550" height="300">
+
 * TERMINAL ECLIPSE 
 
 ## Evidência - Cucumber 

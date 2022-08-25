@@ -18,7 +18,8 @@ public class UserTest {
 	@Test
 	public void localizaUsuario() {
 		//TESTE RETORNA COM NULLPOINTER
-		//User users = this.users.getByUsername("admin");
+		//User users = new User();
+		//users = this.users.getByUsername("admin");
 		//User users = this.users.getById(1L);
 		
 		//assertThat(users.getUsername()).isEqualTo("admin");

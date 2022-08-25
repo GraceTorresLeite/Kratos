@@ -12,14 +12,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-
-
 public class SeleniumTest {
 	
 	String url;
 	WebDriver driver; 
 	LoginPO login;
-	CategoriaPO categoria;
 	
 	@Before
 	public void iniciar() {
@@ -46,61 +43,39 @@ public class SeleniumTest {
 				
 		Assert.assertEquals("Kratos - Gama", login.paginaCarregada().getText());
 		
-		//cadastrar um usuário
-	/*	driver.findElement(By.xpath("//a[contains(text(),'Members')]")).click();
-		driver.findElement(By.xpath("//a[contains(text(),'Add New')]")).click();
-		driver.findElement(By.id("type")).click();
-		WebElement selectElement = driver.findElement(By.id("type"));
-		Select selectObject = new Select(selectElement);
-		selectObject.selectByValue("Student");
-		driver.findElement(By.id("firstName")).click();
-		driver.findElement(By.id("firstName")).sendKeys("Juliana");
-		driver.findElement(By.id("middleName")).click();
-		driver.findElement(By.id("middleName")).sendKeys("Pereira");
-		driver.findElement(By.id("gender")).click();
-		WebElement selectElement2 = driver.findElement(By.id("gender"));
-		Select selectObject2 = new Select(selectElement);
-		selectObject2.selectByIndex(2);
-		driver.findElement(By.id("dateOfBirth")).click();
-		driver.findElement(By.id("dateOfBirth")).sendKeys("15May1993");
-		driver.findElement(By.id("saveBtn")).click();
 		
-		//adicionar categoria de livro
-		driver.findElement(By.xpath("//a[contains(text(),'Categories')]")).click();
-		driver.findElement(By.xpath("(//a[contains(text(),'Add New')])[2]")).click();
-		driver.findElement(By.id("name")).click();
-		driver.findElement(By.id("name")).sendKeys("Automação");
-		driver.findElement(By.id("shortName")).click();
-		driver.findElement(By.id("shortName")).sendKeys("Automação");
-		driver.findElement(By.cssSelector(".btn-success")).click();
-		
-		//cadastrar livro
-		driver.findElement(By.xpath("//a[contains(text(),'Books')]")).click();
-		driver.findElement(By.xpath("(//a[contains(text(),'Add New')])[3]")).click();
-		driver.findElement(By.id("category-selectbox")).click();
-		WebElement selectElement3 = driver.findElement(By.id("category-selectbox"));
-		Select selectObject3 = new Select(selectElement);
-		selectObject2.selectByIndex(1);
-		driver.findElement(By.id("tag")).click();
-		driver.findElement(By.id("tag")).sendKeys("Testes");
-		driver.findElement(By.id("title")).click();
-		driver.findElement(By.id("title")).sendKeys("Automação de Testes com Selenium");
-		driver.findElement(By.id("authors")).click();
-		driver.findElement(By.id("authors")).sendKeys("Gama Academy");
-		driver.findElement(By.cssSelector(".btn-success")).click();*/
 	}
+	
 	@Test
-	public void cadastraCategoriaLivro() throws InterruptedException {
-		//NAO LOCALIZA BOTAO SALVAR
+	public void pesquisaAutor() throws InterruptedException {
 		login = new LoginPO(driver);
 		driver.get(url);
 		login.camposLogin();
 		
-		/*categoria = new CategoriaPO(driver);
-		categoria.camposCategoria();
-		Thread.sleep(3000);
+		//pesquisar livro por autor
+		driver.findElement(By.xpath("//a[contains(text(),'Books')]")).click();
+		driver.findElement(By.xpath("(//a[contains(text(),'List')])[3]")).click();
+		driver.findElement(By.xpath("//input[@type='search']")).click();
+		driver.findElement(By.xpath("//input[@type='search']")).sendKeys("fulano");
 		
-		Assert.assertEquals("automaçao' is added as a new category.", categoria.alertaCategoriaSalvo().getText());*/
+		Assert.assertEquals("fulano", driver.findElement(By.xpath("//table[@id='datatable']/tbody/tr/td[4]")).getText());
+		
+	}
+	
+	
+	@Test
+	public void pesquisaCategoria() throws InterruptedException {
+		login = new LoginPO(driver);
+		driver.get(url);
+		login.camposLogin();
+		
+		//pesquisar livro por categoria
+		driver.findElement(By.xpath("//a[contains(text(),'Dashboard')]")).click();
+		driver.findElement(By.xpath("//a[contains(text(),'Books')]")).click();
+		driver.findElement(By.xpath("(//a[contains(text(),'List')])[3]")).click();
+		driver.findElement(By.xpath("//input[@type='search']")).click();
+		driver.findElement(By.xpath("//input[@type='search']")).sendKeys("O sapo do rio");
+		Assert.assertEquals("O sapo do rio", driver.findElement(By.xpath("//table[@id='datatable']/tbody/tr/td[3]")).getText());
 		
 	}
 }

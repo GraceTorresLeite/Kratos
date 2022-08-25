@@ -18,24 +18,24 @@
 #Sample Feature Definition Template
 @tag
 Feature: Livraria online
-  Eu como usuário quero me logar no site consulatr e selecionar livro
+  Eu como usuário quero me logar no site consultar livro por autor e categoria
 
   @tag1
-  Scenario: Cadastro e login
+  Scenario: login com sucesso
     Given Eu quero acessar a livraria
-    When Eu me cadastrar
+    When Eu digito meus dados
     Then terei habilidade de manipular minhas escolhas
 
   @tag2
-  Scenario Outline: Escolhendo livro por titulo
-    Given Eu quero acessar a livraria
-    When Eu escolho o livro por titulo
-    Then terei a visualização do livro desejado
+  Scenario Outline: Escolhendo livro por categoria
+    Given Eu logada no site
+    When Eu escolho o livro por categoria
+    Then terei a visualização do livro desejado por categoria
     
   @tag3
   Scenario Outline: Escolhendo livro por autor
     Given Eu quero acessar a livraria
     When Eu escolho o livro por autor
-    Then terei a visualização do livro desejado
+    Then terei a visualização do livro desejado por autor
 
 

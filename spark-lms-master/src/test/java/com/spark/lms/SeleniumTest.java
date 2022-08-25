@@ -1,6 +1,9 @@
 package com.spark.lms;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -21,6 +24,8 @@ public class SeleniumTest {
 		url = "http://localhost:8080/";
 		System.setProperty("webdriver.chrome.driver",  System.getProperty("user.dir") + ("\\driver\\chromedriver.exe"));
 		driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(30000, TimeUnit.MILLISECONDS);
+		driver.manage().window().maximize();
 	}
 	
 	
@@ -30,7 +35,7 @@ public class SeleniumTest {
 	}
 
 	@Test
-	public void contextLoads() {
+	public void logar() throws InterruptedException {
 		driver.get(url);
 		//login
 		driver.findElement(By.xpath("//input[@name='username']")).click();
@@ -39,8 +44,12 @@ public class SeleniumTest {
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin");
 		driver.findElement(By.cssSelector(".btn")).click();
 		
+		Thread.sleep(3000);
+		
+		Assert.assertEquals("Spark LMS", driver.findElement(By.xpath("/html/body/div/div/div[1]/div/div[1]/a/span")).getText());
+		
 		//cadastrar um usuário
-		driver.findElement(By.xpath("//a[contains(text(),'Members')]")).click();
+	/*	driver.findElement(By.xpath("//a[contains(text(),'Members')]")).click();
 		driver.findElement(By.xpath("//a[contains(text(),'Add New')]")).click();
 		driver.findElement(By.id("type")).click();
 		WebElement selectElement = driver.findElement(By.id("type"));
@@ -80,7 +89,7 @@ public class SeleniumTest {
 		driver.findElement(By.id("title")).sendKeys("Automação de Testes com Selenium");
 		driver.findElement(By.id("authors")).click();
 		driver.findElement(By.id("authors")).sendKeys("Gama Academy");
-		driver.findElement(By.cssSelector(".btn-success")).click();
+		driver.findElement(By.cssSelector(".btn-success")).click();*/
 	}
 	
 

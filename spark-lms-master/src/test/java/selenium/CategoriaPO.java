@@ -25,7 +25,8 @@ public class CategoriaPO {
 		driver.findElement(By.id("notes")).sendKeys("DISPONIVEL");
 		driver.manage().timeouts().implicitlyWait(20000, TimeUnit.MILLISECONDS);
 		//driver.findElement(By.cssSelector(".btn-success")).click();
-		driver.findElement(By.xpath("//button[@class=\'btn btn-success\']")).click();
+		//driver.findElement(By.xpath("//button[@class=\'btn btn-success\']")).click();
+		driver.findElement(By.xpath("//button[@class=\'btn btn-success\']")).submit();
 		//driver.findElement(By.className("btn btn-success")).click();//button[@class="btn btn-success"]
 		//driver.findElement(By.xpath("/html/body/div/div/div[3]/div/div/div/div[2]/form/div[5]/div/button[2]")).click();
 		driver.manage().timeouts().implicitlyWait(60000, TimeUnit.MILLISECONDS);

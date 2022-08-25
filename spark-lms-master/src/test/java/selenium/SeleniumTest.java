@@ -92,14 +92,13 @@ public class SeleniumTest {
 	@Test
 	public void cadastraCategoriaLivro() throws InterruptedException {
 		//NAO LOCALIZA BOTAO SALVAR
-		/*login = new LoginPO(driver);
+		login = new LoginPO(driver);
 		driver.get(url);
 		login.camposLogin();
 		
-		categoria = new CategoriaPO(driver);
+		/*categoria = new CategoriaPO(driver);
 		categoria.camposCategoria();
-		
-		driver.manage().timeouts().implicitlyWait(60000, TimeUnit.MILLISECONDS);
+		Thread.sleep(3000);
 		
 		Assert.assertEquals("automaçao' is added as a new category.", categoria.alertaCategoriaSalvo().getText());*/
 		

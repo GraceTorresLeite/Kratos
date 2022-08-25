@@ -9,8 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.spark.lms.model.User;
 import com.spark.lms.service.UserService;
 
-
-
 @SpringBootTest
 public class UserTest {
 	

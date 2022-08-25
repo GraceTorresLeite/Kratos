@@ -1,4 +1,4 @@
-package com.spark.lms;
+package selenium;
 
 import java.util.concurrent.TimeUnit;
 

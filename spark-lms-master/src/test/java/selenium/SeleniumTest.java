@@ -19,7 +19,7 @@ public class SeleniumTest {
 	LoginPO login;
 	
 	@Before
-	public void iniciar(WebDriver driver) {
+	public void iniciar() {
 		url = "http://localhost:8080/";
 		System.setProperty("webdriver.chrome.driver",  System.getProperty("user.dir") + ("\\driver\\chromedriver.exe"));
 		driver = new ChromeDriver();

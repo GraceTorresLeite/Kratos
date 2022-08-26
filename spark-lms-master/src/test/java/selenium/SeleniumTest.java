@@ -56,9 +56,9 @@ public class SeleniumTest {
 		driver.findElement(By.xpath("//a[contains(text(),'Books')]")).click();
 		driver.findElement(By.xpath("(//a[contains(text(),'List')])[3]")).click();
 		driver.findElement(By.xpath("//input[@type='search']")).click();
-		driver.findElement(By.xpath("//input[@type='search']")).sendKeys("fulano");
+		driver.findElement(By.xpath("//input[@type='search']")).sendKeys("Mauricio Aniche");
 		
-		Assert.assertEquals("fulano", driver.findElement(By.xpath("//table[@id='datatable']/tbody/tr/td[4]")).getText());
+		Assert.assertEquals("Mauricio Aniche", driver.findElement(By.xpath("//table[@id='datatable']/tbody/tr/td[4]")).getText());
 		
 	}
 	
@@ -74,8 +74,8 @@ public class SeleniumTest {
 		driver.findElement(By.xpath("//a[contains(text(),'Books')]")).click();
 		driver.findElement(By.xpath("(//a[contains(text(),'List')])[3]")).click();
 		driver.findElement(By.xpath("//input[@type='search']")).click();
-		driver.findElement(By.xpath("//input[@type='search']")).sendKeys("O sapo do rio");
-		Assert.assertEquals("O sapo do rio", driver.findElement(By.xpath("//table[@id='datatable']/tbody/tr/td[3]")).getText());
+		driver.findElement(By.xpath("//input[@type='search']")).sendKeys("Testes automatizados de software");
+		Assert.assertEquals("Testes automatizados de software", driver.findElement(By.xpath("//table[@id='datatable']/tbody/tr/td[3]")).getText());
 		
 	}
 }

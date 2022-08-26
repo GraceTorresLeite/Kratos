@@ -102,11 +102,7 @@
 			<version>2.2</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-spring</artifactId>
-			<version>7.6.0</version>
-		</dependency>
+		
 	</dependencies>
 
 	<build>

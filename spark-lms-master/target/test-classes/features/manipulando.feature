@@ -34,7 +34,7 @@ Feature: Livraria online
     
   @tag3
   Scenario Outline: Escolhendo livro por autor
-    Given Eu quero acessar a livraria
+    Given Eu logada no site
     When Eu escolho o livro por autor
     Then terei a visualização do livro desejado por autor
 

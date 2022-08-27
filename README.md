@@ -29,6 +29,15 @@
 
 <img src="spark-lms-master/img/Cucumber_test.png" width="650" height="300">
 
+## Evidência - Appium 
+
+* TERMINAL E EMULADOR INTELLIJ
+
+[Projeto repositório GitHub](https://github.com/GraceTorresLeite/Kratos_Appium_Tests)
+
+<img src="spark-lms-master/img/Appium_passed.png" width="650" height="300">
+
+
 ## Evidência - Coverage
 
 <img src="spark-lms-master/img/Coverage.png" width="550" height="300">

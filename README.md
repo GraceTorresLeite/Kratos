@@ -14,7 +14,7 @@
 
 ## Relatório
 
-[Relatorio Final em PDF](Gama%20Cognizant%20-%20Desafio%20Final.docx.pdf)
+[Relatório Final em PDF](Gama%20Cognizant%20-%20Desafio%20Final.docx.pdf)
 
 ### Interface 
 <img src="spark-lms-master/img/login.png" width="550" height="300">

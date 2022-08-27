@@ -12,6 +12,10 @@
 |    8    | O cliente deve possuir:  Nome, E-mail, Telefone, CPF, RG e Endereço                     |   ✔    |
 |    9    | O projeto deve conter sistema de  cadastramento                                         |     ✔  |
 
+## Relatório
+
+[Relatorio Final em PDF](Gama%20Cognizant%20-%20Desafio%20Final.docx.pdf)
+
 ### Interface 
 <img src="spark-lms-master/img/login.png" width="550" height="300">
 
